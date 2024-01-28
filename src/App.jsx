@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import {getAllSpells } from "./api"
 import SpellCard from './SpellCard'
-import './App.css'
+import "./styles.css"
 
 export default function App() {
   const [count, setCount] = useState(0)
