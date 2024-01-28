@@ -23,11 +23,17 @@ export default function App() {
 
   return (
     <>
-      <h1 className="text-center mt-4 mb-4">Spells</h1>
       <div className="container">
         <div className="card">
+          <button>
+            Count is {count}
+          </button>
+          <p>
+            <button className="" onClick={() => setCount((count) => count + 1)}>
+              Like
+            </button>
+          </p>
         </div>
-        <p className="read-the-docs text-center">This is a test!</p>
         <div className="App">
           {/* Display loading message if spells are not loaded */}
           {spells.length === 0 && <span className="loading">Loading...</span>}
