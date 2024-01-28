@@ -1,5 +1,6 @@
 import { useState, useEffect} from 'react'
 import {getAllSpells } from "./api"
+import SpellCard from './SpellCard'
 import './App.css'
 
 export default function App() {
@@ -26,9 +27,9 @@ export default function App() {
         This is a test!
       </p>
       <div className="App">
-      <ul>
+      <ul className='spell-list'>
         {spells.map((spell) => (
-          <li key={spell.index}>{spell.name}</li>
+          <SpellCard key={spell.index} spell={spell} />
         ))}
       </ul>
     </div>
