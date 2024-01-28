@@ -5,10 +5,15 @@ import './App.css'
 
 export default function App() {
   const [count, setCount] = useState(0)
-  const [spells, setSpells] = useState([])
+  const [spells, setSpells] = useState([]);
 
   useEffect(() => {
-    getAllSpells().then(setSpells);
+    const savedSpells = localStorage.getItem("spells");
+    if (savedSpells) setSpells(JSON.parse(savedSpells));
+    getAllSpells().then((spells) => {
+      setSpells(spells);
+      localStorage.setItem("spells", JSON.stringify(spells));
+    });
   }, []);
 
   return (
@@ -27,7 +32,8 @@ export default function App() {
         This is a test!
       </p>
       <div className="App">
-      <ul className='spell-list'>
+      {spells.length === 0 && <span className="loading">Loading...</span>}
+      <ul className="spell-list">
         {spells.map((spell) => (
           <SpellCard key={spell.index} spell={spell} />
         ))}
