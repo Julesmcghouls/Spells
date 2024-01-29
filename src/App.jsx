@@ -23,6 +23,26 @@ export default function App() {
     });
   }, []); // Empty dependency array triggers the effect only once on mount
 
+  // Function to add spell to spellbook
+  const addToSpellbook = (spell) => {
+    setSpellbook((prevSpellbook) => [...prevSpellbook, spell]);
+  };
+
+  // Function to toggle spell selection
+  const toggleSelection = (spell) => {
+    if (isSpellSelected(spell)) {
+      setSpellbook((prevSpellbook) =>
+        prevSpellbook.filter((selectedSpell) => selectedSpell !== spell)
+      );
+    } else {
+      setSpellbook((prevSpellbook) => [...prevSpellbook, spell]);
+    }
+  };
+
+  // Function to check if a spell is selected
+  const isSpellSelected = (spell) => spellbook.includes(spell);
+
+
   return (
     <>
       <div className="container">
