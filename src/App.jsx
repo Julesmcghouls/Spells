@@ -7,6 +7,8 @@ export default function App() {
   // State to track count and spells
   const [count, setCount] = useState(0);
   const [spells, setSpells] = useState([]);
+  const [spellbook, setSpellbook] = useState([]); // Track selected spells
+  const [searchTerm, setSearchTerm] = useState(''); // Track search term
 
   // useEffect to fetch spells and handle local storage
   useEffect(() => {
