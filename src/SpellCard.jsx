@@ -26,6 +26,7 @@ return (
         <strong>Duration</strong>
         {spell.duration}
         </p>
+        <button onClick={() => addToSpellbook(spell)}>Add to Spellbook</button>
     </div>
     </li>
 );
