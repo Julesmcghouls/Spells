@@ -1,4 +1,8 @@
 export default function SpellCard({ spell }) {
+
+    const addToSpellbook = (spell) => {
+        setSpellbook((prevSpellbook) => [...prevSpellbook, spell]);
+    };
 return (
     <li className="spell-card">
     <hgroup>
