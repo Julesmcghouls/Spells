@@ -1,11 +1,9 @@
 import { useState, useEffect} from 'react'
 import {getAllSpells } from "./api"
-import { css } from '@emotion/react'
 
 export default function App() {
   const [count, setCount] = useState(0)
   const [spells, setSpells] = useState([])
-  const color = 'white'
 
   useEffect(() => {
     getAllSpells().then(setSpells);
@@ -33,19 +31,7 @@ export default function App() {
         ))}
       </ul>
     </div>
-    <div
-    css={css`
-      padding: 32px;
-      background-color: lightblue;
-      font-size: 24px;
-      border-radius: 4px;
-      &:hover {
-        color: ${color};
-      }
-    `}
-  >
-    Hover to change color.
-  </div>
-    </>
+    </> 
   )
 }
+
