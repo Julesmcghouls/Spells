@@ -7,7 +7,8 @@ export default function App() {
 
   useEffect(() => {
     getAllSpells().then(setSpells);
-  }, []);
+  }, []); 
+  
 
   return (
     <>
